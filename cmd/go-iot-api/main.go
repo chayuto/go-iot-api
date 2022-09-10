@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"net/http"
 
+	"github.com/chayuto/go-iot-api/src/controllers"
+
 	"github.com/gin-gonic/gin"
 )
 
@@ -15,6 +17,16 @@ func main() {
 			"message": "pong",
 		})
 	})
+
+	r.GET("/", func(c *gin.Context) {
+		c.JSON(http.StatusOK, gin.H{
+			"message": "go-iot-api",
+		})
+	})
+
+	r.GET("/measurements", controllers.FindMeasurements)
+	r.GET("/measurements/:id", controllers.FindMeasurement)
+	r.POST("/measurements", controllers.CreateMeasurement)
 
 	r.NoRoute(func(c *gin.Context) {
 		c.JSON(404, gin.H{"code": "PAGE_NOT_FOUND", "message": "Page not found"})

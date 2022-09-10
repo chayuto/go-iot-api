@@ -1,4 +1,4 @@
-module go-iot-api
+module github.com/chayuto/go-iot-api
 
 go 1.19
 

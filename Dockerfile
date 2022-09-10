@@ -17,7 +17,7 @@ COPY . .
 RUN go mod download
 
 # Build
-RUN go build -o /wombato
+RUN go build -o ./go-iot-api ./cmd/go-iot-api
 
 # # Run
-CMD [ "/wombato" ]
+CMD [ "./go-iot-api" ]
