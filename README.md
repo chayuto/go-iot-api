@@ -14,7 +14,7 @@ go mod tidy
 docker build --tag go-iot-api .
 docker run --publish 8080:8080 go-iot-api
 
-docker run --publish 8080:8080 go-iot-api -d
+docker run -d --publish 8080:8080 go-iot-api 
  docker ps
  docker kill $(docker ps -q)
  docker rm $(docker ps -a -q)
