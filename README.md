@@ -4,6 +4,10 @@ basic API server with GO
 
 github.com/chayuto/go-iot-api
 
+- Gin
+- Docker
+- Docker compose
+
 ```
 go mod init go-iot-api
 go run .\main.go
@@ -25,6 +29,10 @@ docker kill $(docker ps -q)
 docker rm $(docker ps -a -q)
 
 docker rmi $(docker images -q)
+
+docker compose up --build --remove-orphans
+docker compose up --build --remove-orphans -d
+docker compose down
 ```
 
 REF:

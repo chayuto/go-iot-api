@@ -20,4 +20,5 @@ RUN go mod download
 RUN go build -o ./go-iot-api ./cmd/go-iot-api
 
 # # Run
-CMD [ "./go-iot-api" ]
+# dont need this with docker compose
+# CMD [ "./go-iot-api" ]
